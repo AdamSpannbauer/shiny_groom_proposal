@@ -8,10 +8,12 @@ keys_list = read_json('.keys')
 Sys.setenv(mailgun_api_key = keys_list$mailgun_api_key_long, 
            mailgun_sandbox_id = keys_list$mailgun_sandbox_id)
 
-booze_gif_paths = c(
-  # 'ok_beer.gif',
-  # 'dancin_champagne.gif',
-  'wide_pbr_spill.gif'
-)
+groomsman_ids = c('kr', 'cpc', 'bw', 'imp', 'jlvp2')
 
-groomsman_ids = c('kr', 'cpc', 'bw', 'imp')
+unknown_id_response = 
+  div(
+    br(), br(), br(), br(),
+    p("uhhh... you don't belong here...", 
+      align='center',
+      style="color:white")
+  )

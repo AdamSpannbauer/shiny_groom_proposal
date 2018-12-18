@@ -5,7 +5,8 @@ library(httr)
 
 send_email = function(to_address = "spannbaueradam@gmail.com",
                       subject = "Mailgun from R",
-                      message_text = "Mailgun from R") {
+                      message_text = "Mailgun from R",
+                      stop_on_fail = TRUE) {
   #' Send email with mailgun api + sandbox
   #' 
   #' @param to_address email address to send message to
@@ -45,7 +46,7 @@ send_email = function(to_address = "spannbaueradam@gmail.com",
     body = email_body
   )
   
-  httr::stop_for_status(req)
+  if (stop_on_fail) httr::stop_for_status(req)
   
   return(TRUE)
 }
